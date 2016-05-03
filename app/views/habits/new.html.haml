@@ -1,0 +1,4 @@
+%h3 Create a new habit
+= form_for @habit, url: {action: "create"}, html: {class: "btq_new-habit"} do |f|
+  = f.text_field :title, placeholder: 'Every day, I would like to:'
+  = f.submit
