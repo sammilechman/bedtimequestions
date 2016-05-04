@@ -1,0 +1,11 @@
+%h3 New questionnaire
+= form_for @questionnaire do |f|
+  .btq_questionnaire-preamble
+    Today, did you:
+  %ul
+    = f.fields_for :questions do |question_form|
+      %li
+        = question_form.label :answer, "#{question_form.object.habit.title}?"
+        = question_form.check_box :answer
+  = f.submit
+
