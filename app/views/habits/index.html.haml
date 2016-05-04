@@ -1,6 +1,9 @@
 %h3 My Habits
 = link_to "Create a new habit", new_habit_url
 %p Every day, I would like to:
-%ul.btq_habits-list
+.btq_habits-list
 - @habits.each do |habit|
-  %li.btq_habit= habit.title
+  .btq_habit
+    .btq_habit-title= habit.title
+    .btq_delete-habit
+      =button_to "Delete habit", habit_url(habit), method: :delete

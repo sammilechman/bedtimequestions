@@ -18,6 +18,16 @@ class HabitsController < ApplicationController
     end
   end
 
+  def destroy
+    habit = Habit.find(params[:id])
+    if habit.destroy
+      flash[:notice] = 'Destroyed'
+    else
+      flash[:alert] = 'Error'
+    end
+    redirect_to habits_url
+  end
+
   private
 
   def habits_params

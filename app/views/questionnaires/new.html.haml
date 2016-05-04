@@ -5,6 +5,7 @@
   %ul
     = f.fields_for :questions do |question_form|
       %li
+        = question_form.hidden_field :habit_id, value: question_form.object.habit.id
         = question_form.label :answer, "#{question_form.object.habit.title}?"
         = question_form.check_box :answer
   = f.submit

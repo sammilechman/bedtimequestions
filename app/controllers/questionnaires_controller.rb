@@ -20,6 +20,6 @@ class QuestionnairesController < ApplicationController
   private
 
   def questionnaire_params
-    params.require(:questionnaire).permit(questions_attributes: [:answer])
+    params.require(:questionnaire).permit(questions_attributes: [:habit_id, :answer])
   end
 end
